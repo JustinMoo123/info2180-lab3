@@ -64,4 +64,25 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
     });
+
+    // Exercise 5: Reset the game
+    let newGameBtn = document.querySelector('.btn');
+    newGameBtn.addEventListener('click', function() {
+        // Reset all squares
+        squares.forEach(function(square) {
+            square.textContent = '';
+            square.classList.remove('X', 'O');
+        });
+
+        // Reset the board state array
+        boardState = ['', '', '', '', '', '', '', '', ''];
+
+        // Reset current player to X
+        currentPlayer = 'X';
+
+        // Reset the status message
+        statusDiv.textContent = 'Move your mouse over a square and click to play an X or an O.';
+        statusDiv.classList.remove('you-won');
+    });
+
 });
